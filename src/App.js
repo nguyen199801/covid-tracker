@@ -26,7 +26,6 @@ function App() {
     fetch("https://disease.sh/v3/covid-19/all")
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
         setCountryInfo(data);
       });
   }, []);
@@ -59,12 +58,16 @@ function App() {
     setCountry(countryCode);
 
     const url = countryCode === 'worldwide'
-      ? 'https://disease.sh/v3/covid-19/all'
+      ? 'https://disease.sh/v3/covid-19/countries'
       : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
 
     await fetch(url)
       .then(response => response.json())
       .then(data => {
+        if (countryCode === 'worldwide') {
+          setMapCountries(data);
+          return;
+        }
         setCountry(countryCode);
         setCountryInfo(data);
         var country = [];
@@ -109,10 +112,16 @@ function App() {
 
       <Card className="app__right">
         <CardContent>
-          <h3>Live Cases by Country</h3>
-          <Table countries={tableData} />
-          <h3>Worldwide new cases</h3>
-          <LineGraph />
+          <div className="dataTable">
+            <h3>Live Cases by Country</h3>
+            <Table countries={tableData} />
+          </div>
+
+          <div className="lineGraph">
+            <h3>Worldwide new cases</h3>
+            <LineGraph />
+          </div>
+
         </CardContent>
       </Card>
     </div>

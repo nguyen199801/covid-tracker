@@ -12,19 +12,21 @@
 }
 
 .info-container {
-    width: 200px;
+    width: 220px;
 }
 
 .info-flag {
-    height: 80px;
-    width: 100%;
-    background-size: cover;
-    border-radius: 8px;
+    height: 100px;
 }
 
-.info-flag img {
-    width: 100px;
-    border-radius: 5px;
+.flag {
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.info-country {
+    margin-top: 8px;
 }
 
 .info-confirmed,

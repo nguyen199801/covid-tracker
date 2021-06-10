@@ -11,7 +11,6 @@ function SetViewOnClick({ center }) {
 }
 
 function Map({ center, casesType, countries }) {
-    console.log(center);
     return (
         <div className="map">
             <LeafletMap center={center} zoom={4}>
