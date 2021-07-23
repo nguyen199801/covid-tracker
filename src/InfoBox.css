@@ -1,5 +1,12 @@
 .infoBox {
     flex: 1;
+    cursor: pointer;
+
+}
+
+.infoBox:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .infoBox:not(:last-child) {
@@ -8,6 +15,18 @@
 
 .infoBox__title {
     font-weight: 700;
+}
+
+.infoBox--selected {
+    border-top: 10px solid greenyellow;
+}
+
+.infoBox--red {
+    border-color: red;
+}
+
+.infoBox__cases--green {
+    color: lightgreen !important;
 }
 
 .infoBox__cases {

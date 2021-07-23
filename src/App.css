@@ -19,6 +19,10 @@ body {
   justify-content: space-between;
 }
 
+.app__searchfield {
+  width: 50%;
+}
+
 .app__left {
   flex: 0.9;
 }
